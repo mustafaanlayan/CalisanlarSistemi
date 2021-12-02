@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using CalisanBilgi.Data.DbModel;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,5 +14,7 @@ namespace CalisanBilgi.Data.DataContext
         {
             
         }
+
+        public DbSet<Employe> Employes { get; set; }
     }
 }
