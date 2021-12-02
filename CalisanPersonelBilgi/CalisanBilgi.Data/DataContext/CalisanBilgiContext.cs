@@ -16,5 +16,9 @@ namespace CalisanBilgi.Data.DataContext
         }
 
         public DbSet<Employe> Employes { get; set; }
+        public DbSet<EmployeLeaveAlloction> EmployeLeaveAlloction { get; set; }
+        public DbSet<EmployeLeaveRequest> EmployeLeaveRequest { get; set; }
+        public DbSet<EmployeLeaveType> EmployeLeaveType { get; set; }
+
     }
 }
