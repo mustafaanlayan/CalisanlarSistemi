@@ -10,10 +10,10 @@ namespace CalisanBilgi.Common.VModel
         public string DefaultDays { get;protected set; }
         public DateTime DateCreated { get;protected set; }
 
-
-        public void SetEmployeType()
+        //MVM Create employe type
+        public void SetEmployeType(string name)
         {
-
+            this.Name = name;
         }
     }
 }

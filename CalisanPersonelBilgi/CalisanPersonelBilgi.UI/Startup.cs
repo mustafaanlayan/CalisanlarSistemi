@@ -11,6 +11,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using CalisanBilgi.Common.Mapping;
+using AutoMapper;
+using CalisanBilgi.Data.Contracts;
+using CalisanBilgi.Data.Implemention;
 
 namespace CalisanPersonelBilgi.UI
 {
@@ -29,6 +33,10 @@ namespace CalisanPersonelBilgi.UI
             services.AddRazorPages();
             services.AddDbContext<CalisanBilgiContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            services.AddAutoMapper(typeof(Maps));
+            services.AddScoped<IEmployeLeaveAllocationRepository, EmployeLeaveAllocationRepository>();
+            services.AddScoped<IEmployeLeaveRequestRepository, EmployeLeaveRequestRepository>();
+            services.AddScoped<IEmployeLeaveTypeRepository, EmployeLeaveTypeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
