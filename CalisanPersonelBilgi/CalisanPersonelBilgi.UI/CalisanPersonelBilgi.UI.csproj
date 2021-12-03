@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CalisanBilgi.Common\CalisanBilgi.Common.csproj" />
     <ProjectReference Include="..\CalisanBilgi.Data\CalisanBilgi.Data.csproj" />
+    <ProjectReference Include="..\CalisanBiligi.BusinesEngine\CalisanBiligi.BusinesEngine.csproj" />
   </ItemGroup>
 
 </Project>

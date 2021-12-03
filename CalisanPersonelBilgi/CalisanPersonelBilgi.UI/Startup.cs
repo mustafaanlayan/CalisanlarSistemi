@@ -15,6 +15,8 @@ using CalisanBilgi.Common.Mapping;
 using AutoMapper;
 using CalisanBilgi.Data.Contracts;
 using CalisanBilgi.Data.Implemention;
+using CalisanBiligi.BusinesEngine.Contracts;
+using CalisanBiligi.BusinesEngine.Implemention;
 
 namespace CalisanPersonelBilgi.UI
 {
@@ -34,9 +36,11 @@ namespace CalisanPersonelBilgi.UI
             services.AddDbContext<CalisanBilgiContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
             services.AddAutoMapper(typeof(Maps));
-            services.AddScoped<IEmployeLeaveAllocationRepository, EmployeLeaveAllocationRepository>();
-            services.AddScoped<IEmployeLeaveRequestRepository, EmployeLeaveRequestRepository>();
-            services.AddScoped<IEmployeLeaveTypeRepository, EmployeLeaveTypeRepository>();
+            //services.AddScoped<IEmployeLeaveAllocationRepository, EmployeLeaveAllocationRepository>();
+            //services.AddScoped<IEmployeLeaveRequestRepository, EmployeLeaveRequestRepository>();
+            //services.AddScoped<IEmployeLeaveTypeRepository, EmployeLeaveTypeRepository>();
+
+            services.AddScoped<IEmployeLeaveTypeBusinesEngine, EmployeLeaveTypeBusinesEngine>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

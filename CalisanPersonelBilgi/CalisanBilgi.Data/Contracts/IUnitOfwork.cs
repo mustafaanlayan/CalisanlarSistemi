@@ -6,6 +6,9 @@ namespace CalisanBilgi.Data.Contracts
 {
    public interface IUnitOfwork:IDisposable
    {
-       void Save();
+        IEmployeLeaveAllocationRepository employeLeaveAllocotion { get;  }
+        IEmployeLeaveRequestRepository employeLeaveRequest { get;  }
+        IEmployeLeaveTypeRepository employeLeaveType { get;  }
+        void Save();
    }
 }
