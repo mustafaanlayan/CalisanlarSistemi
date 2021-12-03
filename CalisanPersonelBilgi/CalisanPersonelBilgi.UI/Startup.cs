@@ -41,6 +41,8 @@ namespace CalisanPersonelBilgi.UI
             //services.AddScoped<IEmployeLeaveTypeRepository, EmployeLeaveTypeRepository>();
 
             services.AddScoped<IEmployeLeaveTypeBusinesEngine, EmployeLeaveTypeBusinesEngine>();
+            services.AddScoped<IUnitOfwork, UnitOfwork>();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +68,8 @@ namespace CalisanPersonelBilgi.UI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+                    
                 endpoints.MapRazorPages();
             });
         }
