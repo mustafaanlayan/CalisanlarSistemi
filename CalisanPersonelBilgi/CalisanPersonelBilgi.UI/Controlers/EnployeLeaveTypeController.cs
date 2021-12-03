@@ -18,6 +18,12 @@ namespace CalisanPersonelBilgi.UI.Controlers
 
         public IActionResult Index()
         {
+            var data = _employeLeaveTypeBusinesEngine.GetAllEmployeLeaveType();
+            if (data.IsSucces)
+            {
+                var result = data.Data;
+                return View(result);
+            }
             return View();
         }
     }
